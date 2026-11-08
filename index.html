@@ -1,0 +1,61 @@
+<!DOCTYPE html><html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Baby Assistant</title>
+<style>
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: linear-gradient(135deg, #111827, #312e81);
+  color: white;
+  text-align: center;
+  padding: 30px 15px;
+}
+.box {
+  max-width: 400px;
+  margin: 40px auto;
+  padding: 25px;
+  background: #1f2937;
+  border-radius: 20px;
+}
+h1 { color: #a5b4fc; }
+input {
+  width: 90%;
+  padding: 14px;
+  border-radius: 10px;
+  border: none;
+}
+button {
+  padding: 13px 22px;
+  margin: 10px;
+  border: none;
+  border-radius: 10px;
+  background: #818cf8;
+  color: white;
+  font-size: 16px;
+}
+</style>
+</head>
+<body>
+<div class="box">
+<h1>🤖 Baby Assistant</h1>
+<p>नमस्ते! मैं आपका Baby Assistant हूँ।</p>
+<input id="question" placeholder="मुझसे कुछ पूछिए...">
+<br>
+<button onclick="reply()">पूछें</button>
+<p id="answer">मैं आपकी मदद के लिए तैयार हूँ।</p>
+</div>
+<script>
+function reply() {
+ let q = document.getElementById("question").value;
+ if(q.trim() === "") {
+  document.getElementById("answer").innerText = "पहले कुछ लिखिए!";
+ } else {
+  document.getElementById("answer").innerText =
+  "आपने पूछा: " + q + " 😊";
+ }
+}
+</script>
+</body>
+</html>

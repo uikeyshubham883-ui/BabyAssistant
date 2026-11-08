@@ -1,0 +1,9 @@
+{
+"name": "baby-assistant",
+"version": "1.0.0",
+"description": "My Baby Assistant App",
+"main": "index.html",
+"scripts": {
+"start": "echo Baby Assistant Ready"
+}
+}

@@ -60,13 +60,29 @@ button {
 </div>
 
 <script>
-
 function speak(text) {
+  speechSynthesis.cancel();
+
   let voice = new SpeechSynthesisUtterance(text);
+
   voice.lang = "hi-IN";
+  voice.rate = 0.9;
+  voice.pitch = 1.15;
+  voice.volume = 1;
+
+  let voices = speechSynthesis.getVoices();
+
+  let hindiVoice = voices.find(v =>
+    v.lang.includes("hi") &&
+    /female|woman|google/i.test(v.name)
+  );
+
+  if (hindiVoice) {
+    voice.voice = hindiVoice;
+  }
+
   speechSynthesis.speak(voice);
 }
-
 function reply() {
   let q = document.getElementById("question").value;
 
